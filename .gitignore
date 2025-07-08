@@ -1,0 +1,37 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info
+build/
+dist/
+wheels/
+ga4-resources/
+
+# Virtual environments
+.venv/
+.venv
+mcp-ga4/.venv
+
+# Cursor rules
+.cursorrules
+.cursor 
+
+# Credentials
+google-credentials/
+google-credentials.json
+mcp-ga4/google-credentials.json
+
+# Environment variables
+.env
+mcp-ga4/.env
+mcp-ga4/.python-version
+
+# Development files
+test.py
+
+# OS files
+.DS_Store
+mcp-ga4/.DS_Store
+
+
