@@ -236,3 +236,70 @@ Pull requests are welcome! Please open an issue to discuss major changes.
 ---
 
 Feel free to further customize the README for your organization or add more usage examples as your project evolves.
+
+# 🧠 Infraestructura de Servidores de Integración
+
+Este repositorio contiene el código y configuración de los distintos servidores usados para la integración con APIs externas. A continuación se detallan los problemas detectados, soluciones aplicadas y estado actual de cada servidor.
+
+---
+
+## 📊 1. Servidor GA4 (Google Analytics)
+
+### 🚨 Problemas Identificados
+
+- **Dependencias corruptas de `anyio`**
+  - Causa: instalación incorrecta del paquete.
+  - Solución: reinstalación completa de dependencias con `uv sync --reinstall`.
+
+- **Archivos bloqueados en OneDrive**
+  - Causa: interferencia con archivos del entorno virtual.
+  - Solución: limpieza manual con permisos de administrador.
+
+### ✅ Estado Actual
+
+- `claude_desktop_config.json` correctamente configurado.
+- Variable de entorno `GOOGLE_APPLICATION_CREDENTIALS` establecida.
+- Requiere limpieza adicional del entorno virtual.
+
+---
+
+## 📅 2. Servidor Calendar (Google Calendar)
+
+### 🚨 Problemas Identificados
+
+- **Error de encoding por emojis**
+  - Causa: incompatibilidad con charset en Windows.
+  - Solución: reemplazo de emojis por texto simple.
+
+- **Error de tipo en línea 349**
+  - Causa: tipo de datos incorrecto en función.
+  - Solución: corrección de lógica.
+
+- **Entorno virtual corrupto**
+  - Causa: conflictos de versiones y dependencias.
+  - Solución: recreación completa del entorno.
+
+- **Archivos bloqueados por OneDrive**
+  - Causa: sincronización en tiempo real de `.pyd`.
+  - Solución: mover el proyecto fuera de OneDrive.
+
+### ✅ Estado Final
+
+- Código limpio, sin emojis.
+- Línea 349 corregida.
+- Entorno virtual nuevo: `calendar-mcp-final`.
+- Configuración actualizada en `claude_desktop_config.json`.
+
+---
+
+## 🔍 3. Servidor GSC (Google Search Console)
+
+### ✅ Estado
+
+- Sin problemas identificados.
+- Funcionando correctamente.
+- Usa entorno virtual propio:
+
+```text
+.venv\Scripts\python.exe
+
