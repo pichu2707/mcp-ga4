@@ -1,6 +1,5 @@
 from mcp.server.fastmcp import Context
 from mcp_ga4.auth import ga4_client
-from mcp_ga4.utils import print_report_response
 from typing import Optional, Dict, List, Union
 from google.analytics.data_v1beta.types import (
     RunReportRequest,
@@ -11,15 +10,9 @@ from google.analytics.data_v1beta.types import (
     Filter,
     FilterExpressionList
 )
-import asyncio
 import inspect
-import json
 from mcp_ga4.models import GA4ReportParams
 from mcp_ga4.utils import parse_property_id
-
-def add(a: int, b: int) -> int:
-    """Add two numbers"""
-    return a + b
 
 async def list_properties_tool(ctx: Context) -> List[Dict]:
     """

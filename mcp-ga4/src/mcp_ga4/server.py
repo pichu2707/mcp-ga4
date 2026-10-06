@@ -99,7 +99,7 @@ mcp.resource(
 #     "not just the numeric ID."
 # )(prompts.ga4_property_id_instruction)
 
-print(f"FastMCP server will listen on port: {mcp.port if hasattr(mcp, 'port') else 'unknown'}")
+logger.info(f"FastMCP server will listen on port: {mcp.settings.port}")
 
 def main():
     try:
